@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book &amp; Pay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1B1420;
+    --plum: #241A2C;
+    --cream: #F4EEE3;
+    --gold: #D2A144;
+    --teal: #4E9A8B;
+    --line: rgba(244,238,227,0.14);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding: 56px 20px 80px;
+    background:
+      radial-gradient(circle at 50% 0%, var(--plum) 0%, var(--ink) 60%);
+  }
+
+  main{
+    width:100%;
+    max-width: 420px;
+  }
+
+  .avatar{
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: linear-gradient(155deg, var(--gold), var(--teal));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 30px;
+    text-align:center;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  p.tagline{
+    text-align:center;
+    margin: 0 0 40px;
+    color: rgba(244,238,227,0.62);
+    font-size: 15px;
+    line-height:1.5;
+  }
+
+  .group-label{
+    font-size: 13px;
+    color: rgba(244,238,227,0.5);
+    margin: 0 0 12px 4px;
+    font-weight: 500;
+  }
+
+  section{
+    margin-bottom: 34px;
+  }
+
+  a.btn, button.btn{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    width:100%;
+    padding: 15px 18px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    background: rgba(244,238,227,0.05);
+    border: 1px solid var(--line);
+    color: var(--cream);
+    text-decoration:none;
+    font-family:'Inter', sans-serif;
+    font-size: 15.5px;
+    font-weight: 500;
+    text-align:left;
+    cursor:pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  }
+
+  a.btn:hover, button.btn:hover{
+    border-color: rgba(244,238,227,0.34);
+    background: rgba(244,238,227,0.09);
+  }
+
+  a.btn:active, button.btn:active{
+    transform: scale(0.99);
+  }
+
+  .btn .icon{
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size: 16px;
+  }
+
+  .btn .text{
+    flex:1;
+    min-width:0;
+  }
+
+  .btn .label{
+    display:block;
+    font-weight:600;
+  }
+
+  .btn .sub{
+    display:block;
+    font-size: 12.5px;
+    color: rgba(244,238,227,0.5);
+    margin-top: 1px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .btn .copy-flag{
+    font-size: 12px;
+    color: var(--teal);
+    font-weight:600;
+    opacity:0;
+    transition: opacity 0.15s ease;
+    flex-shrink:0;
+  }
+
+  .btn.copied .copy-flag{ opacity:1; }
+
+  .book .icon{ background: rgba(210,161,68,0.18); color: var(--gold); }
+  .pay .icon{ background: rgba(78,154,139,0.18); color: var(--teal); }
+
+  footer{
+    text-align:center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(244,238,227,0.32);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    a.btn, button.btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="avatar">31</div>
+  <h1>2031 Class</h1>
+  <p class="tagline">Get posted<br>Find roommates &amp; make friends<br>Submit your details below to get posted</p>
+
+  <section>
+    <p class="group-label">Booking</p>
+    <a class="btn book" href="https://forms.gle/QbziMELF6RMiNXuNA" target="_blank" rel="noopener">
+      <span class="icon">✎</span>
+      <span class="text">
+        <span class="label">Submit your post details</span>
+        <span class="sub">Takes about 2 minutes</span>
+      </span>
+    </a>
+  </section>
+
+  <section>
+    <p class="group-label">Send payment</p>
+
+    <a class="btn pay" href="https://venmo.com/u/Lochelle10" target="_blank" rel="noopener">
+      <span class="icon">V</span>
+      <span class="text">
+        <span class="label">Venmo</span>
+        <span class="sub">@Lochelle10</span>
+      </span>
+    </a>
+
+    <button class="btn pay" type="button" data-copy="lionmurage@gmail.com">
+      <span class="icon">P</span>
+      <span class="text">
+        <span class="label">PayPal</span>
+        <span class="sub">lionmurage@gmail.com</span>
+      </span>
+      <span class="copy-flag">Copied</span>
+    </button>
+
+    <button class="btn pay" type="button" data-copy="$lochellecox">
+      <span class="icon">$</span>
+      <span class="text">
+        <span class="label">Cash App</span>
+        <span class="sub">$lochellecox</span>
+      </span>
+      <span class="copy-flag">Copied</span>
+    </button>
+
+    <button class="btn pay" type="button" data-copy="lochelle92@gmail.com">
+      <span class="icon">Z</span>
+      <span class="text">
+        <span class="label">Zelle</span>
+        <span class="sub">lochelle92@gmail.com</span>
+      </span>
+      <span class="copy-flag">Copied</span>
+    </button>
+  </section>
+
+  <footer>Tap a payment method to copy it</footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('button.btn[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var value = btn.getAttribute('data-copy');
+      var restore = function(){
+        btn.classList.remove('copied');
+      };
+      var flash = function(){
+        btn.classList.add('copied');
+        setTimeout(restore, 1400);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(value).then(flash).catch(function(){
+          fallbackCopy(value);
+          flash();
+        });
+      } else {
+        fallbackCopy(value);
+        flash();
+      }
+    });
+  });
+
+  function fallbackCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+  }
+</script>
+
+</body>
+</html>
